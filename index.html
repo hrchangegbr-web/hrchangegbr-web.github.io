@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Change Portal</title>
-<meta name="theme-color" content="#0a0a0a">
+<meta name="theme-color" content="#fafafa">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Change">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="favicon.png">
@@ -16,19 +16,13 @@
   html,body{margin:0;height:100%;background:#fafafa}
   body{padding-top:env(safe-area-inset-top);box-sizing:border-box}
   iframe{display:block;border:0;width:100%;height:100%}
-  #load{position:fixed;inset:0;display:grid;place-items:center;background:#0a0a0a;transition:opacity .3s}
-  #load img{width:160px;height:auto}
 </style>
 </head>
 <body>
-<div id="load"><img src="icon-512.png" alt="Change"></div>
 <iframe id="app" title="Change Employee Portal"
   src="https://script.google.com/macros/s/AKfycby3-ug73lkNZkuNkZeN8d8oUTe8WWQv8DrIWhFOjG-N5yMU92zmqoNzv463bK0PYJ4Piw/exec"
   allow="geolocation *; clipboard-write *"></iframe>
 <script>
-  document.getElementById('app').addEventListener('load', function () {
-    var l = document.getElementById('load'); l.style.opacity = 0; setTimeout(function () { l.remove(); }, 350);
-  });
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function () {});
 </script>
 </body>
